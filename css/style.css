@@ -1,0 +1,32 @@
+#loader {
+	display: none;
+	position: absolute;
+	left: 37%;
+	top: 45%;
+	color: lime;
+	background: black;
+	font-size: 2em;
+	text-align: center;
+	padding: 50px 50px 0 50px;
+	height: 4em;
+	z-index: 9999999;
+
+}
+
+.loader {
+-webkit-animation: cssAnimation 1.007s 15 ease;
+-moz-animation: cssAnimation 1.007s 15 ease;
+-o-animation: cssAnimation 1.007s 15 ease;
+}
+@-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(0deg) scale(1) skew(-46deg) translate(0px); }
+to { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(10px); }
+}
+@-moz-keyframes cssAnimation {
+from { -moz-transform: rotate(0deg) scale(1) skew(-46deg) translate(0px); }
+to { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(10px); }
+}
+@-o-keyframes cssAnimation {
+from { -o-transform: rotate(0deg) scale(1) skew(-46deg) translate(0px); }
+to { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(10px); }
+}

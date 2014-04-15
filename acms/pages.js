@@ -1,0 +1,1 @@
+{"404":{"title":"Page title goes here","meta_descr":"","texto":"404.php"},"home":{"title":"Home Page title goes here","meta_descr":"","texto":"contents\/home.php"},"services":{"title":"Services Page title goes here","meta_descr":"","texto":"contents\/services.php"},"contact":{"title":"Contact Page title goes here","meta_descr":"","texto":"contents\/contact.php"}}

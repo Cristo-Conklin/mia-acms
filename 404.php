@@ -1,0 +1,1 @@
+Hi there, I'm a nasty error 404 page

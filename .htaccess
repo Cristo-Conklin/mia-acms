@@ -1,0 +1,8 @@
+
+RewriteBase /
+
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z0-9-/+]+)$ ?page=$1 [QSA]
+
+ErrorDocument 404 /404

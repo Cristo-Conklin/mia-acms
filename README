@@ -1,0 +1,39 @@
+aCMS MIA - the ajax CMS w Bootstrap template
+--------------------------------------------
+
+Every time you make any profit or save any money by using this scripts,
+you must give a donation of any amount (>=1€) to the following paypal:
+cristoconklin (mail at) gmail.com
+
+Free for study purposes. Give (a)ttribution if developed further.
+
+---------------------------------------------------------------------
+
+ADDING LINKS TO THE MENU 
+For adding new links:
+1.-Just add the link in the html:
+<li><a href="contact2" id="contact2">Contact2</a></li>
+The id should be the destination page you want to add.
+(The pages are just prettified via .htaccess)
+
+The href will make it SEO-bots compatible.
+When navigated by users, the mia.js replaces the href for an # and
+creates a click click event that will load via ajax the page indicated
+by the id.
+
+2.option a.-Add in the pages.js for the php
+... and in pages.json for the mia.js loader to work
+You could use a json editor.
+
+2.option b.-Or... just go to the code acms.php and uncomment $contents 
+and add the entry to the array. 
+Uncomment $this->save_pages_js($contents); in function acms().
+Run it once. Comment again so it runs smoother.
+
+OUTPUTS: PHP AND AJAX EXPLANATION
+Where the output loaded by ajax goes:
+This line at index.php outputs the contents via php for seo bots.
+<?php echo $mia->getAjax(); ?>
+The contents of the <div id="ajax"> are changed by ajax for that
+good user experience when viewed on browsers.
+
