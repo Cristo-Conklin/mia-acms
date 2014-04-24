@@ -37,3 +37,6 @@ This line at index.php outputs the contents via php for seo bots.
 The contents of the <div id="ajax"> are changed by ajax for that
 good user experience when viewed on browsers.
 
+CONTENTS:
+Each section/menu option defined will load its contents from a file
+located in the /contents dir, and linked in the cms as stated above.
