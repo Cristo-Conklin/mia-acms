@@ -2,7 +2,7 @@
 /*
 if you make any profit or save any money by using this scripts,
 you must give a donation of any amount to the following paypal:
-cristoconklin@gmail.com
+cristoconklin ( at ) gmail.com
 
 Free for study purposes. Give (a)ttribution if developed further.
 */
