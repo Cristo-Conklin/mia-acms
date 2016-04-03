@@ -1,3 +1,2 @@
 json pages editor on web > admin .htaccess > gui to upload content pages
 // do func for any n# of params
-simplyfy contruct, checkajax, getajax and check navigation of php without js
