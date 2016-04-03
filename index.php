@@ -56,7 +56,7 @@ $mia = new MIA();
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
+                  <li><a href="params?p=1337" id="params">Action</a></li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
@@ -79,7 +79,7 @@ $mia = new MIA();
         <div id="ajax">
 			<section class="">						
 				<div class="" id="loading">
-					 <?php echo $mia->getAjax(); ?>
+					 <?php echo $mia->acms(); ?>
 				</div>
 			</section>	             
         </div>
@@ -100,7 +100,7 @@ $mia = new MIA();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="js/ajax.js"></script>
+    <!--script type="text/javascript" src="js/ajax.js"></script-->
     <script type="text/javascript" src="js/mia.js"></script>
     <script type="text/javascript" src="js/nav_selected.js"></script>
   </body>

@@ -1,2 +1,3 @@
 json pages editor on web > admin .htaccess > gui to upload content pages
 pages with parameters on id. //should be ok in html 5
+simplyfy contruct, checkajax, getajax and check navigation of php without js

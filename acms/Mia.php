@@ -1,24 +1,13 @@
 <?php  
 /*
 if you make any profit or save any money by using this scripts,
-you must give a donation of any amount to the following paypal:
+you should buy me a cup of tea at paypal:
 cristoconklin ( at ) gmail.com
 
 Free for study purposes. Give (a)ttribution if developed further.
 */
 
 Class Mia {
-	private $noajax;
-
-	function __construct() {
-		$this->noajax = $this->acms();
-    	if ($this->check_ajax()) die();
-	}	
-
-	public function getAjax()
-	{
-		return $this->noajax;
-	}
 
 	private function load_pages_js()
 	{
@@ -36,18 +25,9 @@ Class Mia {
 		else
 			$page = $contents['404'];
 
-		return file_get_contents($page["texto"]);
+		return file_get_contents('contents/' . $page["texto"]);
 	}
 	
-	public function check_ajax()
-	{
-		if (isset($_GET['ajax']) && $_GET['ajax']=='true') {
-			echo $this->noajax; 
-			unset($this->noajax);
-			return true;
-		}											
-		return false;
-	}
 }
 
 
