@@ -30,6 +30,7 @@
 	function clickFunc(j) { 	
 			return function (e){ 
 				e.preventDefault();
+				funcAjax(j); // has to be a func to return different values for each
 
 				return false;
 			};

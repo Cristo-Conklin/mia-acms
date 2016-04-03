@@ -1,0 +1,2 @@
+json pages editor on web > admin .htaccess > gui to upload content pages
+pages with parameters on id. //should be ok in html 5
