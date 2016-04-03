@@ -1,5 +1,5 @@
 <?php 
-require 'acms/acms.php';  
+require 'acms/Mia.php';
 $mia = new MIA(); 
 ?>
 <!DOCTYPE html>
@@ -77,7 +77,11 @@ $mia = new MIA();
       <div class="jumbotron">
 
         <div id="ajax">
-              <?php echo $mia->getAjax(); ?>
+			<section class="">						
+				<div class="" id="loading">
+					 <?php echo $mia->getAjax(); ?>
+				</div>
+			</section>	             
         </div>
 
         <p>

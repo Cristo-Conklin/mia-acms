@@ -7,7 +7,7 @@ cristoconklin ( at ) gmail.com
 Free for study purposes. Give (a)ttribution if developed further.
 */
 
-Class MIA {
+Class Mia {
 	private $noajax;
 
 	function __construct() {
@@ -49,11 +49,6 @@ Class MIA {
 		$json = json_encode($contents); 
 		file_put_contents('acms/pages.js', $json); // for php
 
-		// array with keys for mia.js
-		$mia_js = array_keys($contents);
-		unset($mia_js[404]);
-		$mia_js = json_encode($mia_js);
-		file_put_contents('acms/pages.json', $mia_js);
 	}
 
 	private function load_pages_js()
@@ -64,29 +59,19 @@ Class MIA {
 	public function acms()
 	{		
 		$contents = $this->load_pages_js();
-		//var_dump($contents);
 
 		// $this->save_pages_js($contents); // un-comment once after updating manually the menu array in function save_pages_js
 
-		if (isset($_GET['page']) && !empty($_GET['page'])): 
-			if (isset($contents[$_GET['page']]))
-				$page = $contents[$_GET['page']];
-			else
-				$page = $contents['404'];
-		else:
+		if (isset($_GET['page']) && isset($contents[$_GET['page']]))
+			$page = $contents[$_GET['page']];
+		else if (empty($_GET['page']))
 			$page = $contents['home'];
-		endif;
+		else
+			$page = $contents['404'];
 
-		// uses $page["texto"] for contents
-		// way to use template.php
-		ob_start();
-		include 'acms/template.php';
-		$content = ob_get_contents();
-		ob_end_clean();
-
-		return $content;
+		return file_get_contents($page["texto"]);
 	}
-
+	
 	public function check_ajax()
 	{
 		if (isset($_GET['ajax']) && $_GET['ajax']=='true') {

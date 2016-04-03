@@ -2,14 +2,21 @@
 			/*["home",
 			"services",
 			"contact"];*/
+	var exceptions = ['404'];
 
 	function getPages(){
-	    return $.getJSON('acms/pages.json');
+	    return $.getJSON('acms/pages.js');
 	}
 		getPages().done(function(pages) {
 		    a = [];
 		    $.each(pages, function(key, val) {
-		        a.push(val);
+				console.log(key, exceptions.indexOf(key)>=0, exceptions);
+				if (exceptions.indexOf(key)>=0) {
+					console.log('except: ', key);
+					a.pop(a);
+				} else
+					a.push(key);
+		        
 		    });
 
 		    makeItAjax();
@@ -20,10 +27,9 @@
 		document.getElementById(j).onclick = loadXMLDoc(j); 		
 	}
 
-	function makeFunc(j) { 	
+	function clickFunc(j) { 	
 			return function (e){ 
 				e.preventDefault();
-				funcAjax(j); 
 
 				return false;
 			};
@@ -38,7 +44,7 @@
 			var j = a[i];
 //console.log(j);
 			document.getElementById(j).href = "#";
-			document.getElementById(j).onclick = makeFunc(j);			
+			document.getElementById(j).onclick = clickFunc(j);			
 		}
 	 }
 
