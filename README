@@ -10,20 +10,22 @@ Free for study purposes. Give (a)ttribution if developed further.
 ---------------------------------------------------------------------
 
 ADDING LINKS TO THE MENU 
-For adding new links:
+To add a new link:
+
 1.-Just add the link in the html:
 <li><a href="contact2" id="contact2">Contact2</a></li>
-The id should be the destination page you want to add.
-(The pages are just prettified via .htaccess)
+(The id should be the destination page you want to add)
+
+2.-Add the page in the json file acms/page.js 
+
+OUTPUTS: PHP AND AJAX EXPLANATION
+(The address pages are just prettified via .htaccess)
 
 The href will make it SEO-bots compatible.
 When navigated by users, the mia.js replaces the href for an # and
 creates a click click event that will load via ajax the page indicated
 by the id.
 
-2.-Edit json file acms/page.js 
-
-OUTPUTS: PHP AND AJAX EXPLANATION
 Where the output loaded by ajax goes:
 This line at index.php outputs the contents via php for seo bots.
 <?php echo $mia->getAjax(); ?>
