@@ -1,7 +1,4 @@
 	var a = [];
-			/*["home",
-			"services",
-			"contact"];*/
 	var exceptions = ['404'];
 
 	function getPages(){
@@ -13,8 +10,7 @@
 				if (exceptions.indexOf(key)>=0) {
 					a.pop(a);
 				} else
-					a.push(key);
-		        
+					a.push(key);		        
 		    });
 
 		    makeItAjax();
@@ -31,36 +27,38 @@
 
 				return false;
 			};
-		 }
+	}
+	
+	function getParams(j){
+		var href = document.getElementById(j).href + '';	
+		var split = href.split("?");
+		var params = "";
+		if (split instanceof Array && split.length > 1)
+			params = split[1];
+		return params;
+	}
 
 	function makeItAjax () {
-		// TODO: get a array from file 
-		// 	...or process links with an specific marker: css class, etc... 
-
-		for (i = 0; i < a.length; i++) {
-			var j = a[i];
-			
-			// func
-			var href = document.getElementById(j).href + '';;		
-			var split = href.split("?");
-			var params = "";
-			if (split instanceof Array)
-				params = split[1];
-			
-			document.getElementById(j).href = "#";
-			document.getElementById(j).onclick = clickFunc(j, params);			
-		}
+			for (i = 0; i < a.length; i++) {
+				var j = a[i];
+				var params = getParams(j);
+				
+				$('#'+j).off('click');
+				$('#'+j).on('click', clickFunc(j, params));
+			}						
 	}
 	
 	function loadXMLDoc(page, params) {
 		
 		var desired_delay = 1000;
 		var message_timer = false;
-		var query = 'contents/' + page + '.php'; //'index.php?ajax=true&page=' + page;
+		var query = 'contents/' + page + '.php'; 
 		
 		// do func for any n# of params
-		var p = params.split('=')[1];
-console.log(query, p);
+		var p = "";
+		if (typeof params !== 'undefined')
+			p = params.split('=')[1];
+//console.log(query, p, params, typeof params);
 
 		var request = $.ajax({
 							url: query,
@@ -79,13 +77,10 @@ console.log(query, p);
 			message_timer = false;
 			
 			//----------Page specifics
-			document.getElementById("ajax").innerHTML = xml;  
-			
-			$("#loader").hide(400);
-			
-			makeItAjax(); 
-
 			history.pushState(null, page + " title", page);
+			document.getElementById("ajax").innerHTML = xml;  
+			makeItAjax(); 
+			$("#loader").hide(400);	
 			//---------  	
 		});
 
