@@ -1,4 +1,4 @@
 <p>
 Param: 
 <?php 
-echo isset($_GET['p'])?$_GET['p']:'no se pasaron '; ?> </p>
+echo isset($_GET)?var_dump($_GET):'no se pasaron '; ?> </p>
