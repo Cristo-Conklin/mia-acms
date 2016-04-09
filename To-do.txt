@@ -1,2 +1,3 @@
 json pages editor on web > admin .htaccess > gui to upload content pages
-// do func for any n# of params
+// do func for any n# of params get/post
+
