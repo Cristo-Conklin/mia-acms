@@ -1,16 +1,16 @@
-	var a = [];
-	var exceptions = ['404'];
+	var links = [];
+	var exceptions = ['404']; //get like pages
 
 	function getPages(){
 	    return $.getJSON('acms/pages.js');
 	}
 		getPages().done(function(pages) {
-		    a = [];
+		    links = [];
 		    $.each(pages, function(key, val) {
 				if (exceptions.indexOf(key)>=0) {
-					a.pop(a);
+					links.pop(key);
 				} else
-					a.push(key);		        
+					links.push(key);		        
 		    });
 
 		    makeItAjax();
@@ -44,31 +44,29 @@
 			var p =  params.split('&');
 			
 			$.each(p, function(key, val) {
-					key_value = params.split('=');
+					key_value = val.split('=');
 					params_ajax[key_value[0]] = key_value[1];		        
 		    });
 		return params_ajax;
 	}
 
 	function makeItAjax () {
-		var params_ajax = {}
-		for (i = 0; i < a.length; i++) {
-			var j = a[i];
-			var params = getParams(j);
+		for (i = 0; i < links.length; i++) {
+			var params = getParams(links[i]);
 			
-			$('#'+j).off('click');
-			$('#'+j).on('click', clickFunc(j, params));
+			$('#' + links[i]).off('click');
+			$('#' + links[i]).on('click', clickFunc(links[i], params));
 		}		
 	}
 	
-	function loadXMLDoc(page, params) {
+	function loadXMLDoc(page, params, method = 'GET') {
 		
 		var desired_delay = 1000;
 		var message_timer = false;
 		var query = 'contents/' + page + '.php'; 
 //console.log(query, p, params, typeof params);
 
-		var request = $.ajax({
+		var request = $.ajax({ method: method,
 							url: query,
 							data: { params },
 							cache: false

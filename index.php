@@ -56,7 +56,7 @@ $mia = new MIA();
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="params?p=1337" id="params">Action</a></li>
+                  <li><a href="params?p=1337&p2=42&p3=hola" id="params">Action</a></li>
                   <li><a href="#">Another action</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li class="divider"></li>
